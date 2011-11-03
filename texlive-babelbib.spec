@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /biblio/bibtex/contrib/babelbib
+# catalog-date 2009-10-11 21:12:19 +0200
+# catalog-license lppl1
+# catalog-version 1.29
 Name:		texlive-babelbib
 Version:	1.29
 Release:	1
@@ -96,6 +102,7 @@ typography of the bibliographies.
 %doc %{_texmfdistdir}/source/latex/babelbib/babelbib.ins
 %doc %{_texmfdistdir}/source/latex/babelbib/babelbib.xml
 %doc %{_texmfdistdir}/source/latex/babelbib/getversion.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -106,3 +113,5 @@ typography of the bibliographies.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar bibtex tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
