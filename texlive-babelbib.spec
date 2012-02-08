@@ -6,14 +6,13 @@
 # catalog-version 1.31
 Name:		texlive-babelbib
 Version:	1.31
-Release:	1
+Release:	2
 Summary:	Multilingual bibliographies
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/biblio/bibtex/contrib/babelbib
 License:	LPPL1
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babelbib.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babelbib.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babelbib.source.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -89,19 +88,13 @@ typography of the bibliographies.
 %doc %{_texmfdistdir}/doc/bibtex/babelbib/babelbibtest.tex
 %doc %{_texmfdistdir}/doc/bibtex/babelbib/getversion.tex
 %doc %{_texmfdistdir}/doc/bibtex/babelbib/tugboat-babelbib.pdf
-#- source
-%doc %{_texmfdistdir}/source/latex/babelbib/Makefile
-%doc %{_texmfdistdir}/source/latex/babelbib/babelbib.dtx
-%doc %{_texmfdistdir}/source/latex/babelbib/babelbib.ins
-%doc %{_texmfdistdir}/source/latex/babelbib/babelbib.xml
-%doc %{_texmfdistdir}/source/latex/babelbib/getversion.tex
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a0 -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar bibtex tex doc source %{buildroot}%{_texmfdistdir}
+cp -fpar bibtex tex doc %{buildroot}%{_texmfdistdir}
