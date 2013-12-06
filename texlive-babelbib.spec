@@ -6,7 +6,7 @@
 # catalog-version 1.31
 Name:		texlive-babelbib
 Version:	1.31
-Release:	4
+Release:	5
 Summary:	Multilingual bibliographies
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/biblio/bibtex/contrib/babelbib
