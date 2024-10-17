@@ -3,7 +3,7 @@ Version:	57349
 Release:	2
 Summary:	Multilingual bibliographies
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/biblio/bibtex/contrib/babelbib
+URL:		https://www.ctan.org/tex-archive/biblio/bibtex/contrib/babelbib
 License:	LPPL1
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babelbib.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babelbib.doc.r%{version}.tar.xz
