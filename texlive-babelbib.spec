@@ -1,6 +1,6 @@
 Name:		texlive-babelbib
-Version:	57349
-Release:	2
+Version:	76790
+Release:	1
 Summary:	Multilingual bibliographies
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/biblio/bibtex/contrib/babelbib
