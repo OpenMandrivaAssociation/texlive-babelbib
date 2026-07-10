@@ -1,45 +1,26 @@
-Name:		texlive-babelbib
-Version:	76790
-Release:	1
+%global tl_name babelbib
+%global tl_revision 76790
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.34
+Release:	%{tl_revision}.1
 Summary:	Multilingual bibliographies
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/biblio/bibtex/contrib/babelbib
-License:	LPPL1
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babelbib.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babelbib.doc.r%{version}.tar.xz
+License:	lppl1
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babelbib.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babelbib.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package enables to generate multilingual bibliographies in
-cooperation with babel. Two approaches are possible: Each
-citation may be written in another language, or the whole
-bibliography can be typeset in a language chosen by the user.
-In addition, the package supports commands to change the
-typography of the bibliographies.
+This package enables the user to generate multilingual bibliographies in
+cooperation with babel. Two approaches are possible: Each citation may
+be written in another language, or the whole bibliography can be typeset
+in a language chosen by the user. In addition, the package supports
+commands to change the typography of the bibliographies.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/bibtex/bst/babelbib
-%{_texmfdistdir}/tex/latex/babelbib
-%doc %{_texmfdistdir}/doc/bibtex/babelbib
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar bibtex tex doc %{buildroot}%{_texmfdistdir}
